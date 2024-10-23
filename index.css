@@ -1,0 +1,153 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#game-board {
+    width: 95vh;
+    height: 95vh;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(11, 10fr);
+    grid-template-rows: repeat(11, 10fr);
+    background-color: rgb(41, 62, 25);
+    background-image: url("./image/background-monopoly.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*width: 100%;*/
+}
+
+.border-outer {
+    border: 1px solid #c00;
+}
+
+.sidebar,
+.main-content,
+.rightbar {
+    padding: 20px;
+    transition: width 0.3s;
+}
+
+.sidebar,
+.rightbar {
+    width: 20%;
+    background-color: #fff;
+}
+
+.main-content {
+    width: 150%;
+    background-color: #dff0d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar h1,
+.rightbar h1 {
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: normal;
+}
+
+.sidebar h2,
+.rightbar h2 {
+    font-size: 1.2em;
+    margin: 20px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card,
+.player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.card:last-child,
+.player:last-child {
+    border-bottom: none;
+}
+
+.card i,
+.player i, .player .pion {
+    margin-right: 10px;
+}
+
+.card .details,
+.player .details {
+    flex-grow: 1;
+}
+
+.card .details p,
+.player .details p {
+    margin: 0;
+}
+
+.card .details p:first-child,
+.player .details p:first-child {
+    font-weight: bold;
+}
+
+.card .details p:last-child,
+.player .details p:last-child {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.btn {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.rightbar .player.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.rightbar .player.active i {
+    color: #fff;
+}
+
+.rightbar .player.active .details p:last-child {
+    color: #ccc;
+}
+
+.rightbar.collapsed {
+    width: 5%;
+    padding: 20px 5px;
+}
+
+.rightbar.collapsed .player,
+.rightbar.collapsed h2 {
+    display: none;
+}
+
+.rightbar.collapsed .menu {
+    justify-content: center;
+}
+
+.rightbar .menu {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.rightbar .menu i {
+    font-size: 1.5em;
+}
+
+.rightbar.collapsed .menu i {
+    display: block;
+}
