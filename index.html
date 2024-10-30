@@ -1,122 +1,122 @@
+<!DOCTYPE html>
 <html>
+    <head>
+        <title>Finance Empire</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
 
-<head>
-    <title>Finance Empire</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="index.css">
-
-</head>
-
-<body>
-    <div class="sidebar">
-        <h1>Finance Empire</h1>
-        <h2>Mes Cartes</h2>
-        <div class="card">
-            <i class="fas fa-star"></i>
-            <div class="details">
-                <p>LCL</p>
-                <p>Carte Classique</p>
-            </div>
-            <i class="fas fa-arrow-up"></i>
-        </div>
-        <div class="card">
-            <i class="fas fa-star"></i>
-            <div class="details">
-                <p>Credit Agricole</p>
-                <p>Carte Classique</p>
-            </div>
-            <i class="fas fa-arrow-up"></i>
-        </div>
-        <div class="card">
-            <i class="fas fa-star"></i>
-            <div class="details">
-                <p>Caisse D’épargne</p>
-                <p>Carte Classique</p>
-            </div>
-            <i class="fas fa-arrow-up"></i>
-        </div>
-        <div class="card">
-            <i class="fas fa-star"></i>
-            <div class="details">
-                <p>LCL</p>
-                <p>Carte Premier</p>
-            </div>
-            <i class="fas fa-arrow-up"></i>
-        </div>
-        <div class="card">
-            <i class="fas fa-star"></i>
-            <div class="details">
-                <p>Caisse D’épargne</p>
-                <p>Carte Premier</p>
-            </div>
-            <i class="fas fa-arrow-up"></i>
-        </div>
-        <div class="card">
-            <i class="fas fa-star"></i>
-            <div class="details">
-                <p>Rothschild & Co</p>
-                <p>Carte Infinite</p>
-            </div>
-            <i class="fas fa-arrow-up"></i>
-        </div>
-        <a href="#" class="btn">Lancer le Dé</a>
-    </div>
-    <div class="main-content" id="game-board">
-        <!--
+    <body>
+        <div class="sidebar">
             <h1>Finance Empire</h1>
-        -->
-    </div>
-    <div class="rightbar" id="rightbar">
-        <h1>Finance Empire</h1>
-        <h2>Partie</h2>
-        <div class="menu">
-            <i class="fas fa-bars" onclick="toggleMenu()"></i>
+            <h2>Mes Cartes</h2>
+            <div class="card">
+                <i class="fas fa-star"></i>
+                <div class="details">
+                    <p>LCL</p>
+                    <p>Carte Classique</p>
+                </div>
+                <i class="fas fa-arrow-up"></i>
+            </div>
+            <div class="card">
+                <i class="fas fa-star"></i>
+                <div class="details">
+                    <p>Credit Agricole</p>
+                    <p>Carte Classique</p>
+                </div>
+                <i class="fas fa-arrow-up"></i>
+            </div>
+            <div class="card">
+                <i class="fas fa-star"></i>
+                <div class="details">
+                    <p>Caisse D’épargne</p>
+                    <p>Carte Classique</p>
+                </div>
+                <i class="fas fa-arrow-up"></i>
+            </div>
+            <div class="card">
+                <i class="fas fa-star"></i>
+                <div class="details">
+                    <p>LCL</p>
+                    <p>Carte Premier</p>
+                </div>
+                <i class="fas fa-arrow-up"></i>
+            </div>
+            <div class="card">
+                <i class="fas fa-star"></i>
+                <div class="details">
+                    <p>Caisse D’épargne</p>
+                    <p>Carte Premier</p>
+                </div>
+                <i class="fas fa-arrow-up"></i>
+            </div>
+            <div class="card">
+                <i class="fas fa-star"></i>
+                <div class="details">
+                    <p>Rothschild & Co</p>
+                    <p>Carte Infinite</p>
+                </div>
+                <i class="fas fa-arrow-up"></i>
+            </div>
+            <a  class="btn" onclick="jouerTour()">Lancer le Dé</a>
         </div>
-        <div id="joueurs">
+        <div class="main-content" id="game-board">
+            <!--
+                <h1>Finance Empire</h1>
+            -->
+        </div>
+        <div class="rightbar" id="rightbar">
+            <h1>Finance Empire</h1>
+            <h2>Partie</h2>
+            <div class="menu">
+                <i class="fas fa-bars" onclick="toggleMenu()"></i>
+            </div>
+            <div id="joueurs">
 
-            <div class="player active">
-                <i class="fas fa-star"></i>
-                <div class="details">
-                    <p>Mathieu</p>
-                    <p>En train de jouer...</p>
+                <div class="player active">
+                    <i class="fas fa-star"></i>
+                    <div class="details">
+                        <p>Mathieu</p>
+                        <p>En train de jouer...</p>
+                    </div>
+                    <p>1500$</p>
                 </div>
-                <p>1500$</p>
-            </div>
-            <div class="player">
-                <i class="fas fa-star"></i>
-                <div class="details">
-                    <p>Romain</p>
-                    <p>en jeu</p>
+                <div class="player">
+                    <i class="fas fa-star"></i>
+                    <div class="details">
+                        <p>Romain</p>
+                        <p>en jeu</p>
+                    </div>
+                    <p>36$</p>
                 </div>
-                <p>36$</p>
-            </div>
-            <div class="player">
-                <i class="fas fa-star"></i>
-                <div class="details">
-                    <p>Rayan</p>
-                    <p>en faillite</p>
+                <div class="player">
+                    <i class="fas fa-star"></i>
+                    <div class="details">
+                        <p>Rayan</p>
+                        <p>en faillite</p>
+                    </div>
+                    <p>0$</p>
                 </div>
-                <p>0$</p>
-            </div>
-            <div class="player">
-                <i class="fas fa-star"></i>
-                <div class="details">
-                    <p>Kennan</p>
-                    <p>en faillite</p>
+                <div class="player">
+                    <i class="fas fa-star"></i>
+                    <div class="details">
+                        <p>Kennan</p>
+                        <p>en faillite</p>
+                    </div>
+                    <p>0$</p>
                 </div>
-                <p>0$</p>
             </div>
         </div>
 
-            <script>
-                function toggleMenu() {
-                    var rightbar = document.getElementById('rightbar');
-                    rightbar.classList.toggle('collapsed');
-                }
-                    
-            </script>
-            <script src="./app.js"></script>
-            <script src="./plateau.js"></script>
-</body>
-
+        <script>
+            function toggleMenu() {
+                var rightbar = document.getElementById('rightbar');
+                rightbar.classList.toggle('collapsed');
+            }
+                
+        </script>
+        <script src="./app.js"></script>
+        <script src="./case.js"></script>
+        <script src="./plateau.js"></script>
+    </body>
 </html>

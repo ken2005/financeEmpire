@@ -22,16 +22,38 @@ for (let row = 0; row < 11; row++) {
                 cell.id = 'case'+(30+row);
             }
             cell.innerHTML+= "<br>"+cell.id
-
+            //cell.innerHTML = "";
         } else {
-            cell.classList.add('hidden');
+            if (row == 8 && col == 2) {
+                cell.classList.add('emplacement-de');
+                cell.style.width = '100%';
+                cell.style.height = '100%';
+                cell.onclick = function() {
+                    jouerTour();
+                }
+                //cell.style.backgroundColor = 'red';
+                console.log("emplacement de");
+            }
+            else{
+
+                cell.classList.add('hidden');
+            }
         }
 
         gameBoard.appendChild(cell);
     }
+    
 }
 
-var plateau = new Plateau([],[]);
+var plateau = new Plateau(cases,[]);
+for (let i = 0; i < 40; i++) {
+    console.log(plateau.cases[i].imgLink);
+    document.getElementById('case'+i).style.backgroundImage = "url("+plateau.cases[i].imgLink+")";
+    document.getElementById('case'+i).style.backgroundSize = 'cover';
+
+}
+var joueur1 = new Joueur('Joueur 1', 1000);
+var joueur2 = new Joueur('Joueur 2', 1000);
 
 /*
 function testWait(){
@@ -41,3 +63,11 @@ function testWait(){
     }, 1000);
 }
     */
+
+
+
+let de = new Dé();
+function jouerTour(){
+    console.log(de.lancerEtAnimer());
+    
+}

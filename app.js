@@ -22,9 +22,50 @@ class Voiture {
 
 class Dé {
     constructor(){
+        this.positions = [];
+        for (let i = 0; i < 6; i++){
+            let elem = document.createElement('h1');
+            elem.innerHTML = i+1;
+            this.positions.push(elem);
+        }
+        console.log(this.positions);
     }
     lancer(){
         return Math.floor(Math.random() * 6) + 1;
+    }
+    lancerEtAnimer(){
+        let img = document.createElement('img');
+        img.src = './image/deRotate.gif';
+        img.style.width = '10em';
+        img.style.height = '10em';
+        img.classList.add('shadow');
+        //img.style.margin = '10px';
+        //document.getElementsByClassName('emplacement-de')[0].appendChild(img);
+        //*
+        let a = document.getElementsByClassName('emplacement-de')[0]
+        a.innerHTML = '';
+        a.appendChild(img);
+        /*a.backgroundImage = "url("+img.src+")";
+        a.style.backgroundSize = '100%';
+        //*/
+        
+        //img.style.transform = 'rotate('+Math.random()*360+'deg)';
+        let resultat = this.lancer();
+        let positions = this.positions;
+        setTimeout(function(){
+            //document.getElementsByClassName('emplacement-de')[0].removeChild(img);
+            a.removeChild(img);
+            /*
+            let b = document.createElement('h1');
+            b.innerHTML = resultat;
+            *///*
+           console.log(positions[resultat-1]);
+            console.log(positions[resultat-1]);
+            a.appendChild(positions[resultat-1]);
+            //document.getElementsByClassName('emplacement-de')[0].backgroundImage = 'none';
+        }, 1000);
+        //*/
+        return resultat;
     }
 }
 
@@ -130,6 +171,7 @@ class Joueur {
 class Case{
     constructor(nom,imgLink){
         this.nom = nom;
+        this.imgLink = imgLink;
         let element = document.createElement('div');
         element.className = 'case';
         element.style.backgroundImage = "url('"+imgLink+"')";

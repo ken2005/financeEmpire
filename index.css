@@ -12,7 +12,7 @@ body {
     grid-template-columns: repeat(11, 10fr);
     grid-template-rows: repeat(11, 10fr);
     background-color: rgb(41, 62, 25);
-    background-image: url("./image/background-monopoly.png");
+    /*background-image: url("./image/background-monopoly.png");*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,6 +22,12 @@ body {
 .border-outer {
     border: 1px solid #c00;
 }
+
+.shadow {
+    width: 150px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+  }
 
 .sidebar,
 .main-content,
