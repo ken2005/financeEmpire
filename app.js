@@ -315,13 +315,24 @@ class Partie{
         this.tour = 0;
         this.tourActuel = this.joueurs[0];
         this.tourActuel.jouerTour();
+        this.joueurs.forEach(joueur => {
+            joueur.afficherPion()
+        });
     }
-    jouerTour(){
+    jouerTour(de){
+        /*document.getElementById('bouton-dé').style.display = 'none'*/
         this.tourActuel.jouerTour();
-        this.tourActuel.avancer(this.tourActuel.de.lancer(), this.plateau);
-        this.tourActuel.finTour();
-        this.tourActuel = this.joueurs[this.tour % this.joueurs.length];
-        this.tour++;
+        let resultat = de.lancerEtAnimer()
+        let tempThis = this;
+        setTimeout(function(){
+            
+            tempThis.tourActuel.avancer(resultat , tempThis.plateau);
+            tempThis.tourActuel.finTour();
+            tempThis.tourActuel = tempThis.joueurs[tempThis.tour % tempThis.joueurs.length];
+            tempThis.tour++;
+            /*document.getElementById('bouton-dé').style.display = 'bloc'*/
+        }, 1000);
+
     }
     tourSuivant(){
         this.tourActuel.finTour();

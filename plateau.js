@@ -52,9 +52,10 @@ for (let i = 0; i < 40; i++) {
     document.getElementById('case'+i).style.backgroundSize = 'cover';
 
 }
-var joueur1 = new Joueur('Joueur 1', 1000);
-var joueur2 = new Joueur('Joueur 2', 1000);
-
+var joueur1 = new Joueur('Joueur 1', 1);
+var joueur2 = new Joueur('Joueur 2', 2);
+let joueurs = [joueur1,joueur2]
+var partie  = new Partie(joueurs,plateau)
 /*
 function testWait(){
     console.log("Executed now");
@@ -68,6 +69,8 @@ function testWait(){
 
 let de = new Dé();
 function jouerTour(){
-    console.log(de.lancerEtAnimer());
+    /*console.log(de.lancerEtAnimer());*/
+    partie.jouerTour(de)
+
     
 }

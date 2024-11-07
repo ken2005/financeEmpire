@@ -12,8 +12,8 @@ body {
     grid-template-columns: repeat(11, 10fr);
     grid-template-rows: repeat(11, 10fr);
     background-color: rgb(41, 62, 25);
-    /*background-image: url("./image/background-monopoly.png");*/
-    background-size: cover;
+    /*background-image: url("./image/background-monopoly.png");
+    */background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     /*width: 100%;*/
